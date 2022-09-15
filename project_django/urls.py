@@ -24,5 +24,5 @@ urlpatterns = [
 # TODO: Implement Routings Here
 
 urlpatterns = [
-        path('', include('katalog.urls')),
+        path('katalog/', include('katalog.urls')),
 ]
