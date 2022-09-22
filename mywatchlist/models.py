@@ -1,5 +1,4 @@
 from platform import release
-from turtle import title
 from django.db import models
 from django.core.validators import *
 
