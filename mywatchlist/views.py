@@ -4,7 +4,8 @@ from mywatchlist.models import Filmwatchlist
 from django.http import HttpResponse
 from django.core import serializers
 # Create your views here.
-
+# file ini berisi view yang akan ditampilkan pada user
+# context adalah variable yang akan diload html pada templates
 
 def show_xml(request):
     data = Filmwatchlist.objects.all()
@@ -24,6 +25,8 @@ def show_xml_by_id(request, id):
 
 def show_html(request):
     data = Filmwatchlist.objects.all()
+
+    #akan cek sesuai soal bonus
     total_film = 0
     for film in data:
         if film.watched:

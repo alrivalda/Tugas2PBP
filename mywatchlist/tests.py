@@ -4,6 +4,7 @@ from django.test import TestCase, Client
 # Create your tests here.
 
 class Testingmywatchlist(TestCase):
+    # untuk melakukan testing
     def tes_mywatchlist_showhtml(self):
         response = Client().get('/mywatchlist/html/')
         self.assertEquals(response.status_code,200)
