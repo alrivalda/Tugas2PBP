@@ -1,0 +1,110 @@
+[
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Brave",
+            "rating": 4,
+            "release_date": "2012-06-22",
+            "review": "No less lovely than former films, in many ways lovelier, but Brave is boutique Pixar: less ambitious, more succinct, excellence at a lower ebb"
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": true,
+            "title": "Descicable Me 2",
+            "rating": 4,
+            "release_date": "2013-07-03",
+            "review": "Co-directors Chris Renaud and Pierre Coffin, who do Minion voices expertly, never let up on the laughs. A fart joke in 3-D may not be three times as wacky, but the high spirits of Despicable Me 2 are irresistible fun."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": true,
+            "title": "Frozen",
+            "rating": 5,
+            "release_date": "2013-10-27",
+            "review": "'Frozen' feels like it's breaking new ground in telling a story where the women are actually in control, and where the clichs of their narratives are turned inside out, almost as a sly commentary on what has come before."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": false,
+            "title": "Cinderlla",
+            "rating": 1,
+            "release_date": "2015-10-13",
+            "review": "-"  }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "Finding Dori",
+            "rating": 4,
+            "release_date": "2016-10-15",
+            "review": "The central irony of Finding Dory is that Dory is a risk-taker trapped in a movie that, for all its likability, won't join her on whimsical leaps."}
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Moana",
+            "rating": 5,
+            "release_date": "2017-03-07",
+            "review": "It's a deeply moving and beautiful film that celebrates it's main character, her culture and her self-empowerment... but she could have been a lot more meaningful and authentic if she reflected and honored a specific Pacific Island culture."        }
+
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Frozen II",
+            "rating": 4,
+            "release_date": "2019-10-22",
+            "review": "Frozen II is a worthy follow-up with enough heart, action, and music to entertain younger and older viewers alike."
+           }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Inside Out",
+            "rating": 4,
+            "release_date": "2015-06-19",
+            "review": "Inside Out beautifully transforms emotional conflict into an adventure, a surreal look at the internal machinations that encompass why we feel the way we do."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Zootopia",
+            "rating": 5,
+            "release_date": "2016-06-07",
+            "review": "Sure to speak to kids and grown-ups alike, Zooptopia unfolds a poignant lesson about how prejudice can hurt people, but also how it can be overcome. And it does all this in a wonderfully fun film"
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "Sonic the hedgehog",
+            "rating": 4,
+            "release_date": "2020-03-31",
+            "review": "-"
+        }
+    }
+]
