@@ -1,6 +1,3 @@
-from datetime import datetime
-from pydoc import describe
-from turtle import mode, title
 from django.db import models
 from django.contrib.auth.models import User
 
