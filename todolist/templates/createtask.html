@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Create Task</title>
+{% endblock meta %}
+
+{% block content %}
+<h1>Create Task</h1>
+
+<form method="POST">
+   {% csrf_token %}
+   <table>
+    {{task}}
+    <tr>
+        <td><input type="submit" nama="submit" value="Create"></td>
+    </tr>
+
+
+   </table>
+
+
+
+
+
+</form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+        
+    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+
+</div>
+
+{% endblock content %}
