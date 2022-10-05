@@ -1,39 +1,60 @@
 {% extends 'base.html' %}
-
+{% load static %} 
 {% block meta %}
-<title>Create Task</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Task</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'Registrasi/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'Registrasi/css/style.css' %}">
+</head>
 {% endblock meta %}
-
 {% block content %}
-<h1>Create Task</h1>
+<body>
+    <div class = "login">
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <h2 class="form-title">Create Task</h2>
+                    <div class="form-group">
+                        <div class="form-input"> 
+                        <form method="POST">
 
-<form method="POST">
-   {% csrf_token %}
-   <table>
-    {{task}}
-    <tr>
-        <td><input type="submit" nama="submit" value="Create"></td>
-    </tr>
+                            {% csrf_token %}
+                            <table>
+                            {{task.as_table}}
+                            <tr>
+                               <td width="1000px"> </td>
+                                    <a  href="{% url 'todolist:show_index' %}">
+                                        <input  type="submit" nama="submit" id="submit" class="form-submit" value="Create">
+                                    </a>
+                            </tr>
+                            </table>
+                        </form>
+                        </div>
+                    </div>
+                       
+                        {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}     
+ 
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
 
-
-   </table>
-
-
-
-
-
-</form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
 
 {% endblock content %}
