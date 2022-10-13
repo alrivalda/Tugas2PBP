@@ -24,44 +24,17 @@
 
     <script>
         
-  // get data using jquery ajax
+  
   $(document).ready(function() {
     $.get('/todolist/json', function(data, status) {
-      let  temp = '';
+      
       for (let i = 0; i < data.length; i++) {
-        temp += `
-        <div class="tengah">
-                            
-                       
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h5 class="card-title">${data[i].fields.title}</h5>
-                                <p class="card-text">${data[i].fields.description}</p>
-                                <p class="card-text">${data[i].fields.date}</p>
-                                {% if '${data[i].fields.finished} != false' %}
-                                <div class="alert alert-success" role="alert">
-                                    Finished
-                            
-                                  </div>
-                                  <h1>${data[i].fields.finished}</h1>
-                                {% else %}
-                                <div class="alert alert-danger" role="alert">
-                                    In Progress
-                                  </div>
-                                {% endif %}
-                                <h1>
-                                <a href="/todolist/update-task/${data[i].pk}" class="btn btn-primary">Update</a>
-                                <a href="/todolist/delete-task/${data[i].pk}" class="btn btn-primary">Delete</a>
-                                </div>
-                        </div>  
-                        
-                
-                </div>
-        `;
-        $('.card-content').html(temp);
+        for (let i = 0; i < data.length; i++) {
+            $("card-content").append(todo(data[i]))
+        }
       }
     });
-  });
+  
 
   $(document).ready( function(){
     $('.add-task').click( function(){
@@ -77,84 +50,76 @@
 
   $(document).ready(function() {
     $('.btn-save').click(function() {
-      // Stop form from submitting normally
       event.preventDefault();
 
-      // Get s  ome values from elements on the page:
+      
       let title = $('.title').val();
       let description = $('.description').val();
       let CSRFtoken = $('input[name="csrfmiddlewaretoken"]').val();
-
-      // Send the data using post
-      $.post( '/todolist/add/', { title: title, description: description, csrfmiddlewaretoken: CSRFtoken });
-
-      // load data using ajax
-      $.get('/todolist/json', function(data, status) {
-        let  content = '';
         
-          $('.card-content').html(content);
-        }
-
-    const todo = (todo) => {
-            for (let i = 0; i < data.length; i++) {
-
-if (data[i].fields.finished == true){
-    content += `
-<div class="tengah">
-                
-           
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                    <h5 class="card-title">${data[i].fields.title}</h5>
-                    <p class="card-text">${data[i].fields.description}</p>
-                    <p class="card-text">${data[i].fields.date}</p>
-           
-                    <div class="alert alert-success" role="alert">
-                        Finished
-                      </div>
-                  
-                    <h1>
-                    <a href="/todolist/update-task/${data[i].pk}" class="btn btn-primary">Update</a>
-                    <a href="/todolist/delete-task/${data[i].pk}" class="btn btn-primary">Delete</a>
-                    </div>
-            </div>  
-            
     
-    </div>
-`;
-} else {
-content += `
-<div class="tengah">
-                
-           
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                    <h5 class="card-title">${data[i].fields.title}</h5>
-                    <p class="card-text">${data[i].fields.description}</p>
-                    <p class="card-text">${data[i].fields.date}</p>
-                
-                    <div class="alert alert-danger" role="alert">
-                        In Progress
-                      </div>
+      $.post( '/todolist/add/', { title: title, description: description, csrfmiddlewaretoken: CSRFtoken });
+      $.get('/todolist/json', function(data, status) {
+        for (let i = 0; i < data.length; i++) {
+            $(".card-content").append(todo(data[i]))
+        }
+        });
+
+        const todo = (data) => {
+            if (data.fields.finished == true){
+                return `
+                <div class="tengah">
+                                
+                        
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title">${data.fields.title}</h5>
+                                    <p class="card-text">${data.fields.description}</p>
+                                    <p class="card-text">${data.fields.date}</p>
+                        
+                                    <div class="alert alert-success" role="alert">
+                                        Finished
+                                    </div>
+                                
+                                    <h1>
+                                    <a href="/todolist/update-task/${data.pk}" class="btn btn-primary">Update</a>
+                                    <a href="/todolist/delete-task/${data.pk}" class="btn btn-primary">Delete</a>
+                                    </div>
+                            </div>  
+                            
                     
-                    <h1>
-                    <a href="/todolist/update-task/${data[i].pk}" class="btn btn-primary">Update</a>
-                    <a href="/todolist/delete-task/${data[i].pk}" class="btn btn-primary">Delete</a>
                     </div>
-            </div>  
-            
-    
-    </div>
-`};
-        }
-      });
-      $('.title').empty();
+                `;
+                } else {
+                return `
+                <div class="tengah">
+                                
+                        
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title">${data[i].fields.title}</h5>
+                                    <p class="card-text">${data[i].fields.description}</p>
+                                    <p class="card-text">${data[i].fields.date}</p>
+                                
+                                    <div class="alert alert-danger" role="alert">
+                                        In Progress
+                                    </div>
+                                    
+                                    <h1>
+                                    <a href="/todolist/update-task/${data[i].pk}" class="btn btn-primary">Update</a>
+                                    <a href="/todolist/delete-task/${data[i].pk}" class="btn btn-primary">Delete</a>
+                                    </div>
+                            </div>  
+                            
+                    
+                    </div>
+                `}
+            }
+            $('.title').empty();
       $('.description').empty();
       $('.modal').toggle();
-    })
-  })
-
-  // prevent form resubmission
+        });
+            
   if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
   }
@@ -237,3 +202,4 @@ content += `
     {% endblock content %}
 
 </body>
+    
