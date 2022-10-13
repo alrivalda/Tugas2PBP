@@ -368,5 +368,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   background-image: url("../images/ui.png");
 }
 
-
+#submit {
+  width: 10px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -27,17 +27,16 @@
                     <div class="form-group">
                         <div class="form-input"> 
                         <form method="POST">
-
                             {% csrf_token %}
                             <table>
                             {{task.as_table}}
-                            <tr>
-                               <td width="1000px"> </td>
-                                    <a  href="{% url 'todolist:show_index' %}">
-                                        <input  type="submit" nama="submit" id="submit" class="form-submit" value="Create">
-                                    </a>
-                            </tr>
                             </table>
+                            <tr>
+                                <td width="1000px"> </td>
+                                     <a  href="{% url 'todolist:show_index' %}">
+                                         <input  type="submit" nama="submit" id="submit" class="form-submit" value="Create">
+                                     </a>
+                             </tr>
                         </form>
                         </div>
                     </div>

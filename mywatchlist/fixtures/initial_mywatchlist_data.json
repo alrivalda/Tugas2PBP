@@ -3,7 +3,7 @@
         "model": "mywatchlist.filmwatchlist",
         "pk": 1,
         "fields": {
-            "watched": true,
+            "watched": false,
             "title": "Brave",
             "rating": 4,
             "release_date": "2012-06-22",
@@ -14,7 +14,7 @@
         "model": "mywatchlist.filmwatchlist",
         "pk": 2,
         "fields": {
-            "watched": true,
+            "watched": false,
             "title": "Descicable Me 2",
             "rating": 4,
             "release_date": "2013-07-03",
@@ -25,7 +25,7 @@
         "model": "mywatchlist.filmwatchlist",
         "pk": 3,
         "fields": {
-            "watched": true,
+            "watched": false,
             "title": "Frozen",
             "rating": 5,
             "release_date": "2013-10-27",
@@ -46,7 +46,7 @@
         "model": "mywatchlist.filmwatchlist",
         "pk": 5,
         "fields": {
-            "watched": true,
+            "watched": false,
             "title": "Finding Dori",
             "rating": 4,
             "release_date": "2016-10-15",
